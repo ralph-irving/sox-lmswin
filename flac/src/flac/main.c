@@ -476,6 +476,10 @@ int do_it(void)
 	flac__utils_printf(stderr, 2, "flac comes with ABSOLUTELY NO WARRANTY.  This is free software, and you are\n");
 	flac__utils_printf(stderr, 2, "welcome to redistribute it under certain conditions.  Type `flac' for details.\n\n");
 
+	flac__utils_printf(stderr, 2, "Patched for Logitech Media Server\n");
+	flac__utils_printf(stderr, 2, "http://bugs.slimdevices.com/show_bug.cgi?id=10886\n");
+	flac__utils_printf(stderr, 2, "http://bugs.slimdevices.com/show_bug.cgi?id=11223\n\n");
+
 	if(option_values.mode_decode) {
 		FLAC__bool first = true;
 

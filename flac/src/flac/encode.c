@@ -397,8 +397,8 @@ int flac__encode_aif(FILE *infile, off_t infilesize, const char *infilename, con
 				return EncoderSession_finish_error(&encoder_session);
 			}
 			if(data_bytes!=(sample_frames*bytes_per_frame)) {
-				flac__utils_printf(stderr, 1, "%s: ERROR: SSND chunk size inconsistent with sample frame count\n", encoder_session.inbasefilename);
-				return EncoderSession_finish_error(&encoder_session);
+				flac__utils_printf(stderr, 1, "%s: WARNING: SSND chunk size inconsistent with sample frame count\n", encoder_session.inbasefilename);
+				/* return EncoderSession_finish_error(&encoder_session); */
 			}
 
 			/* *options.common.align_reservoir_samples will be 0 unless --sector-align is used */
@@ -1061,7 +1061,10 @@ int flac__encode_wav(FILE *infile, off_t infilesize, const char *infilename, con
 							print_error_with_state(&encoder_session, "ERROR during encoding");
 							return EncoderSession_finish_error(&encoder_session);
 						}
-						data_bytes -= bytes_read;
+
+						if (!options.common.ignore_chunk_sizes) {
+							data_bytes -= bytes_read;
+						}
 					}
 				}
 			}
