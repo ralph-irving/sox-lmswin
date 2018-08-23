@@ -16,4 +16,4 @@
  */
 
 typedef __int64 __int64_t;
-#include "../../libsndfile/src/sndfile.h.in"
+#include "../../../libsndfile/src/sndfile.h.in"

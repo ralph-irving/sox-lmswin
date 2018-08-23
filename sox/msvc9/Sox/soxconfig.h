@@ -24,14 +24,6 @@
    directory containing sox.exe. */
 #define PKGLIBDIR "./soxlib"
 
-#define HAVE_AMRNB 1
-#define STATIC_AMRNB 1
-#define DL_AMRNB 1
-
-#define HAVE_AMRWB 1
-#define STATIC_AMRWB 1
-#define DL_AMRWB 1
-
 #define HAVE_FLAC 1
 #define STATIC_FLAC 1
 #define FLAC__NO_DLL
@@ -41,13 +33,12 @@
 
 #define HAVE_ID3TAG 1
 
-#define DL_LAME 1
+#define HAVE_LAME_H 1
 
 #define HAVE_LPC10 1
 #define STATIC_LPC10 1
 
 #define HAVE_MAD_H 1
-#define DL_MAD 1
 
 #define HAVE_MP3 1
 #define STATIC_MP3 1
@@ -64,7 +55,6 @@
 #define HAVE_SFC_SET_SCALE_FLOAT_INT_READ 1
 #define HAVE_SFC_SET_SCALE_INT_FLOAT_WRITE 1
 #define STATIC_SNDFILE 1
-#define DL_SNDFILE 1
 
 #define HAVE_SPEEXDSP 1
 

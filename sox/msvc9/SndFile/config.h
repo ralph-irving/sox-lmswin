@@ -285,7 +285,7 @@ typedef unsigned __int16 uint16_t;
 #define USE_WINDOWS_API 1
 
 /* Version number of package */
-#define VERSION "1.0.20"
+#define VERSION "1.0.27"
 
 /* Set to 1 if windows DLL is being built. */
 #define WIN32_TARGET_DLL 1

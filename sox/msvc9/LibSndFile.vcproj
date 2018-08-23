@@ -100,7 +100,7 @@
 			Name="Release|Win32"
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)\lib\"
 			IntermediateDirectory="$(SolutionDir)$(ConfigurationName)\$(ProjectName)"
-			ConfigurationType="2"
+			ConfigurationType="4"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -124,7 +124,7 @@
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
 				AdditionalIncludeDirectories="SndFile;..\..\libsndfile\src;../../flac/include;../../libogg/include;../../libvorbis/include"
-				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;LIBSNDFILE_EXPORTS;inline=__inline"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;inline=__inline"
 				StringPooling="true"
 				ExceptionHandling="0"
 				RuntimeLibrary="0"
@@ -147,20 +147,11 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLinkerTool"
-				OutputFile="$(SolutionDir)$(ConfigurationName)\$(ProjectName)-1.dll"
-				ModuleDefinitionFile="..\..\libsndfile\src\libsndfile-1.def"
-				GenerateDebugInformation="true"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
-				SetChecksum="true"
-				ImportLibrary="$(OutDir)$(TargetName).lib"
+				Name="VCLibrarianTool"
+				AdditionalLibraryDirectories=""
 			/>
 			<Tool
 				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -170,9 +161,6 @@
 			/>
 			<Tool
 				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -321,6 +309,14 @@
 			</File>
 			<File
 				RelativePath="..\..\libsndfile\src\ogg.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\libsndfile\src\ogg_speex.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\libsndfile\src\ogg_vorbis.c"
 				>
 			</File>
 			<File

@@ -90,6 +90,7 @@
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)\lib\"
 			IntermediateDirectory="$(SolutionDir)$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="4"
+			UseOfMFC="0"
 			CharacterSet="1"
 			WholeProgramOptimization="1"
 			>

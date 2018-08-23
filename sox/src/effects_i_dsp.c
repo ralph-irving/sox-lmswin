@@ -341,6 +341,24 @@ void lsx_apply_kaiser(double h[], const int num_points, double beta)
   }
 }
 
+static double safe_log(double x)
+{
+  assert(x >= 0);
+  if (x)
+    return log(x);
+  lsx_debug("log(0)");
+  return -26;
+}
+
+double acosh(double x)
+{	
+	double t;
+
+	t=sqrt(x-1.0);
+
+	return(safe_log(t*(t+sqrt(x+1.0))));
+}
+
 void lsx_apply_dolph(double h[], const int N, double att)
 {
   double b = cosh(acosh(pow(10., att/20)) / (N-1)), sum, t, c, norm = 0;
@@ -404,15 +422,6 @@ double * lsx_design_lpf(
     *num_taps = phases > 1? *num_taps / phases * phases + phases - 1 : (*num_taps + modulo - 2) / modulo * modulo + 1;
   return Fn < 0? 0 : lsx_make_lpf(
       *num_taps, Fc, beta, rho, (double)phases, sox_false);
-}
-
-static double safe_log(double x)
-{
-  assert(x >= 0);
-  if (x)
-    return log(x);
-  lsx_debug("log(0)");
-  return -26;
 }
 
 void lsx_fir_to_phase(double * * h, int * len, int * post_len, double phase)

@@ -139,6 +139,8 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
+				AdditionalDependencies="LibMad.lib LibMp3Lame.lib"
+				AdditionalLibraryDirectories="$(OutDir)\"
 			/>
 			<Tool
 				Name="VCALinkTool"
