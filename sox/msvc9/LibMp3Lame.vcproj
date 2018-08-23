@@ -20,7 +20,7 @@
 			Name="Debug|Win32"
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)\lib\"
 			IntermediateDirectory="$(SolutionDir)$(ConfigurationName)\$(ProjectName)"
-			ConfigurationType="2"
+			ConfigurationType="4"
 			CharacterSet="1"
 			>
 			<Tool
@@ -68,18 +68,10 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLinkerTool"
-				OutputFile="$(SolutionDir)$(ConfigurationName)\$(ProjectName).dll"
-				ModuleDefinitionFile="..\..\lame\include\lame.def"
-				GenerateDebugInformation="true"
-				SetChecksum="true"
-				ImportLibrary="$(OutDir)$(TargetName).lib"
+				Name="VCLibrarianTool"
 			/>
 			<Tool
 				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -89,9 +81,6 @@
 			/>
 			<Tool
 				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"

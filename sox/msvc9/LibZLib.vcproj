@@ -52,7 +52,7 @@
 				RuntimeTypeInfo="false"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
-				WarnAsError="true"
+				WarnAsError="false"
 				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
 				CallingConvention="0"
