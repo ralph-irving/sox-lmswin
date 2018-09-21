@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual C++ Express 2008
+# Visual Studio 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibSoX", "LibSoX.vcproj", "{F17BE535-C7E8-4930-A6FD-32498D73A533}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SoX", "SoX.vcproj", "{AC136601-504C-4E1A-9DC8-0CC493AA0983}"
@@ -24,9 +24,6 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibFlac", "LibFlac.vcproj", "{38203D05-AF71-4FF2-A183-A7D9CB8D2AE0}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibGsm", "LibGsm.vcproj", "{BEE9F57C-384E-4C99-87EB-629BF45C8A89}"
-	ProjectSection(ProjectDependencies) = postProject
-		{B7A8AD9A-0D07-4453-B2DE-FEABD9546263} = {B7A8AD9A-0D07-4453-B2DE-FEABD9546263}
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibLpc10", "LibLpc10.vcproj", "{C588FF17-FB2F-48D9-BB99-40B6D52B9B85}"
 EndProject
@@ -37,9 +34,6 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibOgg", "LibOgg.vcproj", "{C5C229AC-316D-42CB-9CA3-329619618972}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibPng", "LibPng.vcproj", "{46E7AC9D-3E96-4B34-B493-501BC277D6F9}"
-	ProjectSection(ProjectDependencies) = postProject
-		{4DFD6FD1-96F1-434A-AC69-01783B876354} = {4DFD6FD1-96F1-434A-AC69-01783B876354}
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibWavPack", "LibWavPack.vcproj", "{7461CC57-B1CB-4766-B357-F51587449474}"
 EndProject

@@ -32,6 +32,19 @@ extern "C" {
 #pragma GCC system_header
 #endif
 
+#if defined __GNUC__
+#define LSX_GCC(maj, min) \
+  ((__GNUC__ > (maj)) || (__GNUC__ == (maj) && __GNUC_MINOR__ >= (min)))
+#else
+#define LSX_GCC(maj, min) 0
+#endif
+
+#if LSX_GCC(4,9)
+#define _Ret_ __attribute__ ((returns_nonnull))
+#define _Ret_valid_ _Ret_
+#define _Ret_z_ _Ret_
+#endif
+
 /*****************************************************************************
 API decoration macros:
 Mostly for documentation purposes. For some compilers, decorations also affect
@@ -594,6 +607,7 @@ typedef enum sox_encoding_t {
   SOX_ENCODING_CVSD      , /**< Continuously Variable Slope Delta modulation */
   SOX_ENCODING_LPC10     , /**< Linear Predictive Coding */
   SOX_ENCODING_OPUS      , /**< Opus compression */
+  SOX_ENCODING_DSD       , /**< Direct Stream Digital */
 
   SOX_ENCODINGS            /**< End of list marker */
 } sox_encoding_t;
@@ -2450,7 +2464,7 @@ Finds the file extension for a filename.
 @returns the file extension, not including the '.', or null if filename does
 not have an extension.
 */
-LSX_RETURN_VALID_Z LSX_RETURN_PURE
+LSX_RETURN_OPT LSX_RETURN_PURE
 char const *
 LSX_API
 lsx_find_file_extension(

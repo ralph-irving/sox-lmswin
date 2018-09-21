@@ -96,9 +96,6 @@
 			<Tool
 				Name="VCAppVerifierTool"
 			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
@@ -181,9 +178,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
 	</Configurations>

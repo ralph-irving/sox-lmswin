@@ -236,6 +236,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\src\id3.h"
+				>
+			</File>
+			<File
 				RelativePath="..\src\ignore-warning.h"
 				>
 			</File>
@@ -273,6 +277,14 @@
 			</File>
 			<File
 				RelativePath="..\src\raw.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\sdm.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\sdm_x86.h"
 				>
 			</File>
 			<File
@@ -772,6 +784,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\src\sdm.c"
+				>
+			</File>
+			<File
 				RelativePath="..\src\silence.c"
 				>
 			</File>
@@ -889,6 +905,18 @@
 			</File>
 			<File
 				RelativePath="..\src\dat.c"
+				>
+			</File>
+			<File
+				RelativePath="..\src\dop.c"
+				>
+			</File>
+			<File
+				RelativePath="..\src\dsdiff.c"
+				>
+			</File>
+			<File
+				RelativePath="..\src\dsf.c"
 				>
 			</File>
 			<File
@@ -1181,6 +1209,10 @@
 			</File>
 			<File
 				RelativePath="..\src\getopt.c"
+				>
+			</File>
+			<File
+				RelativePath="..\src\id3.c"
 				>
 			</File>
 			<File

@@ -2,7 +2,7 @@ dnl Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.62)
 
-AC_INIT(SoX, 14.4.2, sox-devel@lists.sourceforge.net)
+AC_INIT(SoX, 14.4.3git, sox-devel@lists.sourceforge.net)
 
 AC_CONFIG_MACRO_DIR([m4])
 
@@ -170,10 +170,6 @@ if test "$GCC" = "yes"; then
 
     CFLAGS="$CFLAGS -Wall -W -Wmissing-prototypes -Wstrict-prototypes -pedantic"
 
-    AS_VERSION_COMPARE([$gccver], [4.3],
-       [WARN_CFLAGS="-Wconversion"],
-       [WARN_CFLAGS="-Wtraditional-conversion"],
-       [WARN_CFLAGS="-Wtraditional-conversion"])
     dnl Define stricter policy on GNU/Linux, all symbols must be resolved
     case $target in
       *linux* | *solaris*)
@@ -207,7 +203,7 @@ AC_HEADER_STDC
 AC_CHECK_HEADERS(fcntl.h unistd.h byteswap.h sys/stat.h sys/time.h sys/timeb.h sys/types.h sys/utsname.h termios.h glob.h fenv.h)
 
 dnl Checks for library functions.
-AC_CHECK_FUNCS(strcasecmp strdup popen vsnprintf gettimeofday mkstemp fmemopen)
+AC_CHECK_FUNCS(strcasecmp strdup popen vsnprintf gettimeofday mkstemp fmemopen aligned_alloc)
 
 dnl Check if math library is needed.
 AC_SEARCH_LIBS([pow], [m])
@@ -381,7 +377,7 @@ using_id3tag=no
 if test "$with_id3tag" != "no"; then
     using_id3tag=yes
     AC_CHECK_HEADER(id3tag.h,
-        [AC_CHECK_LIB(id3tag, id3_file_open, MP3_LIBS="$MP3_LIBS -lid3tag -lz",using_id3tag=no, -lz)],
+        [AC_CHECK_LIB(id3tag, id3_file_open, ID3_LIBS="-lid3tag -lz", using_id3tag=no, -lz)],
         using_id3tag=no)
     if test "$with_id3tag" = "yes" -a "$using_id3tag" = "no"; then
         AC_MSG_FAILURE([cannot find id3tag])
@@ -391,6 +387,7 @@ if test "$using_id3tag" = yes; then
    AC_DEFINE(HAVE_ID3TAG, 1, [Define to 1 if you have id3tag.])
 fi
 AM_CONDITIONAL(HAVE_ID3TAG, test x$using_id3tag = xyes)
+AC_SUBST(ID3_LIBS)
 
 
 

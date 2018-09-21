@@ -73,9 +73,6 @@
     <ClInclude Include="..\src\g72x.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\ignore-warning.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\ima_rw.h">
       <Filter>Headers</Filter>
     </ClInclude>
@@ -211,6 +208,9 @@
       <Filter>Effect Sources</Filter>
     </ClCompile>
     <ClCompile Include="..\src\divide.c">
+      <Filter>Effect Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dop.c">
       <Filter>Effect Sources</Filter>
     </ClCompile>
     <ClCompile Include="..\src\earwax.c">
@@ -595,6 +595,15 @@
       <Filter>Effect Sources</Filter>
     </ClCompile>
     <ClCompile Include="..\src\downsample.c">
+      <Filter>Effect Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dsdiff.c">
+      <Filter>Format Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dsf.c">
+      <Filter>Format Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sdm.c">
       <Filter>Effect Sources</Filter>
     </ClCompile>
   </ItemGroup>

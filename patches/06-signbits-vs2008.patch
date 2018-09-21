@@ -1,0 +1,16 @@
+--- src/sdm.c.orig	2018-09-21 14:41:49.058750000 -0400
++++ src/sdm.c	2018-09-21 14:03:14.902500000 -0400
+@@ -922,6 +922,13 @@
+   return output ? SOX_SAMPLE_MAX : -SOX_SAMPLE_MAX;
+ }
+ 
++#if _MSC_VER < 1700
++static int signbit(double x)
++{
++	return x > 0;
++}
++#endif
++
+ static sox_sample_t sdm_sample(sdm_t *p, double x)
+ {
+   const sdm_filter_t *f = p->filter;

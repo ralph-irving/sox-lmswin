@@ -150,6 +150,11 @@ static int startread(sox_format_t * ft)
                 lsx_debug("%d %d",
                        p->dictionary[i].dict_leftson,
                        p->dictionary[i].dict_rightson);
+                if ((unsigned) p->dictionary[i].dict_leftson >= dictsize ||
+                    (unsigned) p->dictionary[i].dict_rightson >= dictsize) {
+                        lsx_fail_errno(ft, SOX_EHDR, "Invalid dictionary");
+                        return SOX_EOF;
+                }
         }
         rc = lsx_skipbytes(ft, (size_t) 1); /* skip pad byte */
         if (rc)
@@ -432,9 +437,10 @@ static int stopwrite(sox_format_t * ft)
   int rc = SOX_SUCCESS;
 
   /* Compress it all at once */
-  if (compressed_len)
+  if (compressed_len) {
     compress(ft, &compressed_data, (int32_t *)&compressed_len);
-  free(p->data);
+    free(p->data);
+  }
 
   /* Write the header */
   lsx_writebuf(ft, "\000\001A", (size_t) 3); /* Dummy file name "A" */
